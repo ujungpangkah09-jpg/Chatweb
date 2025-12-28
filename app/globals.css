@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Force readable defaults on all devices (some Android browsers
+     auto-enable dark mode which can make text turn white on light UI). */
+  --background: #f0f2f5;
+  --foreground: #111827;
 }
 
 @theme inline {
@@ -12,12 +14,8 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* If you later want a real dark theme, implement a proper theme toggle.
+   Avoid relying on prefers-color-scheme so the UI stays consistent. */
 
 body {
   background: var(--background);
@@ -33,6 +31,22 @@ html, body {
 .wa-wallpaper {
   background: #e5ddd5;
   position: relative;
+}
+
+/* AMOLED / WhatsApp Android dark wallpaper */
+.wa-wallpaper-amoled {
+  background: #0b141b;
+  position: relative;
+}
+
+.wa-wallpaper-amoled::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cg fill='none' stroke='%23ffffff' stroke-opacity='0.08'%3E%3Cpath d='M30 40c20-10 40 10 60 0'/%3E%3Cpath d='M150 60c10 20-10 40 0 60'/%3E%3Ccircle cx='70' cy='160' r='18'/%3E%3Cpath d='M170 170l20-10 10 20'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat;
+  pointer-events: none;
+  opacity: 1;
 }
 
 /* overlay doodle pattern (simple SVG data URI) */

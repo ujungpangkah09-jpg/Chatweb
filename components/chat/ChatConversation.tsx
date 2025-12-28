@@ -244,7 +244,7 @@ export default function ChatConversation() {
       )}
 
       {/* Messages area (WA wallpaper) */}
-      <div className="flex-1 overflow-auto px-4 py-3 wa-wallpaper">
+      <div className="flex-1 overflow-auto px-4 py-3 wa-wallpaper-amoled">
         {/* System message */}
         <div className="flex justify-center my-3">
           <div className="text-[12px] px-3 py-2 rounded-lg bg-[#fff3c4] text-[#5c4b00] shadow-sm">

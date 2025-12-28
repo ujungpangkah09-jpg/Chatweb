@@ -17,7 +17,10 @@ type UIState = {
   replyingToMessageId: string | null;
 
   sidebarQuery: string;
-  unreadOnly: boolean;
+  /** Android-like chips filter */
+  activeChip: "all" | "unread" | "fav" | "group";
+  /** Toggle archived folder view */
+  showArchived: boolean;
 
   set: (patch: Partial<UIState>) => void;
   resetComposer: () => void;
@@ -37,7 +40,8 @@ export const useChatUI = create<UIState>((set) => ({
   replyingToMessageId: null,
 
   sidebarQuery: "",
-  unreadOnly: false,
+  activeChip: "all",
+  showArchived: false,
 
   set: (patch) => set(patch),
   resetComposer: () => set({ composerText: "", editingMessageId: null, replyingToMessageId: null }),

@@ -35,7 +35,7 @@ export default function NewChatOverlay({ onClose }: { onClose: () => void }) {
 
   return (
     <div className="absolute inset-0 bg-black/40 z-40 flex">
-      <div className="w-[380px] bg-white h-full border-r border-[#d1d7db]">
+      <div className="w-[380px] bg-white text-[#111827] h-full border-r border-[#d1d7db]">
         <div className="h-14 px-3 bg-[#f0f2f5] flex items-center justify-between border-b border-[#d1d7db]">
           <div className="font-medium text-sm">New Chat</div>
           <button onClick={onClose} className="text-sm px-2 py-1 rounded hover:bg-black/5">✕</button>
@@ -45,7 +45,7 @@ export default function NewChatOverlay({ onClose }: { onClose: () => void }) {
           <div className="bg-[#f0f2f5] rounded-lg px-3 py-2 flex items-center gap-2">
             <span className="text-gray-500">🔎</span>
             <input
-              className="bg-transparent outline-none text-sm w-full"
+              className="bg-transparent outline-none text-sm w-full text-[#111827] placeholder:text-gray-500"
               placeholder="Cari username..."
               value={q}
               onChange={(e) => setQ(e.target.value)}

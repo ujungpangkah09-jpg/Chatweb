@@ -73,7 +73,9 @@ export default function AuthScreen({ initialMode }: { initialMode?: Mode }) {
       }
 
       // REGISTER
-      const uname = username.trim().toLowerCase();
+    // Keep the username as user typed it (for display). You can enforce
+    // lowercasing server-side if you need strict uniqueness.
+    const uname = username.trim();
 
       const res = await supabase.auth.signUp({
         email: eMail,
